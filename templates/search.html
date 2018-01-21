@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="/static/css/search_results.css" />
+</head>
+<body>
+    <div>
+        {% for item, links in films %}
+{#        <li><a href="{{link}}" >{{item}}</a></li>#}
+           <ol> <li>{{item}}</li> </ol>
+        <div class="box">
+            <p>
+                {% for item in links.split('|')%}
+                    {{ item }}<br>
+                {% end %}
+            </p>
+        </div>
+        {% end %}
+    </div>
+
+</body>
+</html>

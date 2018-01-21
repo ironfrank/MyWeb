@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+{#    <head>#}
+{#    <title>测试Ajax</title>#}
+{#    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#    <script src="http://code.jquery.com/jquery-3.1.0.js"></script>#}
+{##}
+{#    <style type="text/css">#}
+{#        #result {#}
+{#            border: 10px;#}
+{#            font-size: 50px;#}
+{#            background: #ff0fef;#}
+{#        }#}
+{#    </style>#}
+{#</head>#}
+{##}
+{#<body bgcolor="#a9a9a9">#}
+{##}
+{#    <input type="text" id="search"> <br>#}
+{#    <button id="foo">点击</button> {##}
+{#    <li>#} {# <input type="text" id="word">#} {# <a href="/news" ref='WeeklyNewsList'>本周热点</a>#} {# <select>#}
+{#          <option value ="volvo">Volvo</option>#}
+{#          <option value ="saab">Saab</option>#}
+{#          <option value="opel">Opel</option>#}
+{#          <option value="audi">Audi</option>#}
+{#        </select>#} {# <input type="text" id="word">#} {# <input type="text" id="word2">#} {# <input name="Fruit" type="checkbox"
+{#            value="" />#} {# <label><input name="Fruit" type="checkbox" value="" />key</label>#} {# </li>#}
+
+</head>
+<body>
+    <div>
+        <ul id="result"></ul>
+    </div>
+
+    <script type="text/javascript">
+        function search() {
+            var word = $("#search").val(); //获取文本框的输入
+            //把word发给后台程序
+            //返回的数据放在data中，返回状态放在status
+            $.post("/test", { message: word }, function (data, status) {
+                if (status == "success") {
+                    { #                    $("#result").html(data); # }
+                    var result = JSON.parse(data);
+
+                    result = result['film'];
+                    { #                    console.log(result); # }
+                    for (var i = 0; i < result.length; i++) {
+                        console.log(result[i])
+                        var li = "<li><a href=" + result[i]["link"] + ">" + result[i]["name"] + "</a></li>";
+                        $("#result").append(li);
+                    }
+                }
+                else {
+                    alert("Ajax 失败");
+                }
+            });
+        }
+
+        $("#search").keyup(function (event) {
+            if (13 == event.keyCode) {
+                search();
+            }
+        });
+
+        $("#foo").click(function () {
+            search();
+        });
+    </script>
+</body>
+
+</html>

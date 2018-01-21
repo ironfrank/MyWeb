@@ -1,0 +1,153 @@
+/**Variables 变量**/
+/**背景图片**/
+.fixedTop {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.fixedBottom {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+/**圆角*/
+/* Mixin 四边圆角 */
+/**boxS*/
+.box_S {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+body {
+  color: #ffffff;
+  font-size: 14px;
+  font-family: tahoma, "Microsoft YaHei", 'PingFang SC', 'Helvetica Neue', 'Helvetica', 'STHeitiSC-Light', 'Arial', sans-serif;
+}
+/**Nested Rules  嵌套的规则**/
+.bordered {
+  border-bottom: solid 1px #e8e8e8;
+}
+.borderTop {
+  border-top: solid 1px #e8e8e8;
+}
+.blockMid {
+  display: block;
+  margin: 0 auto;
+}
+.prelative {
+  position: relative;
+}
+.pabsolute {
+  position: absolute;
+}
+.content {
+  padding: 0 4%;
+}
+.pright {
+  right: 4%;
+}
+.bgcolor {
+  background: #fa5527;
+}
+.white {
+  color: #ffffff;
+}
+.content {
+  width: 1144px;
+  margin: 0 auto;
+}
+.input_wrap_box {
+  background: #0f1034;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  width: 770px;
+  height: 50px;
+  line-height: 50px;
+  margin-top: 46px;
+  position: relative;
+}
+.input_wrap_box .input_cover {
+  text-align: center;
+  line-height: 48px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  z-index: 3;
+  background: #0f1034;
+  border-radius: 27px;
+  -webkit-border-radius: 27px;
+  -moz-border-radius: 27px;
+  /*pointer-events:none;*/
+}
+.input_wrap_box .input_cover .num {
+  color: #ff0000;
+}
+.input_wrap_box .input_cover .icons {
+  color: #9a99a4;
+  padding-left: 10px;
+}
+.input_wrap_box #sercHead {
+  background: #0f1034;
+  width: 100%;
+  display: block;
+  text-align: center;
+  line-height: 36px;
+  border: 1px solid #1d2556;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  color: #ffffff;
+  /* Text Styling */
+  font-family:'AirstreamRegular', Georgia, 'Times New Roman', serif;
+  text-shadow:0px 0px 5px rgba(0, 0, 0, 0.75);
+  font-size:20px;
+}
+.input_wrap_box #sercHead.cur {
+  border: 1px solid #6974b3;
+}
+.iconlogo {
+  display: block;
+  margin: 0 auto;
+  padding: 45px 0;
+}
+
+input {
+	margin:70px auto;
+	display:block;
+}
+
+/* The first button */
+
+input#search_submit {
+	/* General Propertoes */
+	height:34px;
+	width:250px;
+	border:1px solid #858fa6;
+	background:#4a5775;
+	/* CSS3 Styling */
+	background:-moz-linear-gradient(top, #606c88, #3f4c6b);
+	background:-webkit-gradient(linear, left top, left bottom, from(#606c88), to(#3f4c6b));
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	-moz-box-shadow:0px 0px 5px #000;
+	-webkit-box-shadow:0px 0px 5px #000;
+	box-shadow:0px 0px 5px #000;
+	/* Text Styling */
+	font-family:'AirstreamRegular', Georgia, 'Times New Roman', serif;
+	color:#e5edff;
+	text-shadow:0px 0px 5px rgba(0, 0, 0, 0.75);
+	font-size:20px;
+}
