@@ -12,11 +12,8 @@ from dbbox import *
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
-#
-# sys.path.append("WeChat/modules/frank_wechat/session_services/")
-# import base_support as frank
 
-# from base_support import *
+
 define("port", default=8888, help="run on the given port", type=int)
 define("debug", default=True, help="run in debug mode")
 
@@ -45,21 +42,12 @@ class MainHandler(tornado.web.RequestHandler):
 
 
 class AjaxHandler(tornado.web.RequestHandler):
-    db = None
 
-    # def __init__(self):
-    #     self.db = DB('film', '127.0.0.1')
-
-    # def search_film(self, param):
     def post(self):
-        # self.write("hello world")
         search_content = self.get_argument("message")
-        # self.db = DB('film', '127.0.0.1')
-        # rows = self.db.query_film_table(search_content)
         rows = db.query_film_table(search_content)
         namelist = []
         for item,val in rows:
-            #item = item if item else 'nil'
             if not item or not val:
                 continue
             namelist.append({"name": item, "link": val})
@@ -67,8 +55,6 @@ class AjaxHandler(tornado.web.RequestHandler):
         filmdict = {}
         filmdict['film'] = namelist
         encode_json = json.dumps(filmdict)
-        #encode_json = '{"film":[{"name":1, "link":2}, {"name":3, "link":4}]}'
-        #self.get_argument("message")
         self.write(encode_json)
 
 
