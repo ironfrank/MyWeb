@@ -10,19 +10,14 @@
         {% for item, links in films %}
 {#        <li><a href="{{link}}" >{{item}}</a></li>#}
            <ol> <li>{{item}}</li> </ol>
-<<<<<<< HEAD
         <div class="box">
-=======
->>>>>>> 5f5361f491701807c2cedf2f806c83838c232825
+
             <p>
                 {% for item in links.split('|')%}
                     {{ item }}<br>
                 {% end %}
             </p>
-<<<<<<< HEAD
         </div>
-=======
->>>>>>> 5f5361f491701807c2cedf2f806c83838c232825
         {% end %}
     </div>
 
